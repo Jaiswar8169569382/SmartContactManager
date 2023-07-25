@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="user/base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<section>
+<div class="container">
+<div th:if="${session.msgc}" th:classappend="${session.msgc.css}" class="alert alert-success">
+<p class="text-center" th:text="${session.msg.content}">Contact updated</p>
+<th:block th:text="${#session.removeAttribute('msgc')}"></th:block>
+</div>
+<div class="card">
+<div class="card-header text-center mybackground text-white">
+<h3>Update Contact</h3>
+</div>
+<div class="card-body">
+<form id="myform" action="#" th:action="@{/contact/contactupdateprocess}" method="post" >
+<input   type="text" hidden="true" name="cid" th:value="${contacts.cid}">
+<div class="input-group">
+<div class="input-group-prepend">
+<div class="input-group-text">
+<i class="fa fa-user-secret"></i>
+</div>
+</div>
+<input type="text" class="form-control"  name="name" placeholder="Enter name" th:value="${contacts.name}">
+</div>
+
+<!-- second name start here -->
+<div class="input-group mt-1">
+<div class="input-group-prepend">
+<div class="input-group-text">
+<i class="fa fa-user"></i>
+</div>
+</div>
+<input type="text" class="form-control" name="secondname" placeholder="Enter Secondname" th:value="${contacts.secondname}">
+
+</div>
+
+<!-- Enter Contact here -->
+<div class="input-group mt-1">
+<div class="input-group-prepend">
+<div class="input-group-text">
+<i class="fa fa-phone"></i>
+</div>
+</div>
+<input type="text" class="form-control"  name="contact" placeholder="Enter Contact" th:value="${contacts.contact}">
+
+</div>
+
+<!-- Email start here -->
+
+<div class="input-group mt-1">
+<div class="input-group-prepend">
+<div class="input-group-text">
+<i class="fa fa-at"></i>
+</div>
+</div>
+<input type="email" name="email"  class="form-control" placeholder="Enter email" th:value="${contacts.email}">
+
+</div>
+
+<!-- work start here -->
+<div class="input-group mt-1">
+<div class="input-group-prepend">
+<div class="input-group-text">
+<i class="fa fa-suitcase"></i>
+</div>
+</div>
+<input type="text" name="work" class="form-control" placeholder="Enter work" th:value="${contacts.work}">
+</div>
+
+<!-- Description start here -->
+
+<div class="form-group mt-1">
+<textarea rows="3" name="about"  placeholder="Enter Something yourself" class="form-control" th:text="${contacts.about}"></textarea>
+</div>
+
+
+<div id="loaders" class="text-center" style="display: none">
+<span class="fa  fa-refresh fa-3x fa-spin"></span>
+<p>Please wait ...</p>
+</div>
+
+<div class="text-center mt-1" id="buttons">
+<button type="submit" class="btn btn-primary">Update <span class="fa fa-edit"></span></button>
+<button type="reset" class="btn btn-warning">Reset <span class="fa fa-refresh"></span></button>
+</div>
+
+
+</form>
+</div>
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+$(document).ready(function(){
+	
+	$('#myform').on('submit',function(event)
+			{
+		          $('#loaders').show();
+		          
+			})
+})
+</script> 
+</section>
+</body>
+</html>

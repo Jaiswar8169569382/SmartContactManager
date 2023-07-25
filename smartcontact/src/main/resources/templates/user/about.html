@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.ord" th:replace="user/base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<section>
+<div class="container">
+
+<div class="col-md-10 offset-md-1">
+<div class="card">
+<div class="card-header mybackground text-white">
+<div class="text-center ">
+<span class="fa fa-user-circle fa-3x"></span><br>
+<h3><span th:text="${user.firstname}"></span> <span th:text="${user.lastname}"></span></h3>
+</div>
+</div>
+<div class="card-body">
+<div class="text-center">
+<table class="table">
+<tr>
+<th>Username :</th>
+<td th:text="${user.email}"></td>
+</tr>
+
+<tr>
+<th>Gender :</th>
+<td th:text="${user.gender}"></td>
+</tr>
+
+<tr>
+<th>Role :</th>
+<td th:text="${user.role}"></td>
+</tr>
+
+<tr>
+<th>About :</th>
+<td th:text="${user.about}"></td>
+</tr>
+</table>
+</div>
+</div>
+<div class="card-footer">
+
+<div class="text-center">
+<a th:href="@{/user/update}" class="btn mybackground text-white ">Update</a>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</body>
+</html>

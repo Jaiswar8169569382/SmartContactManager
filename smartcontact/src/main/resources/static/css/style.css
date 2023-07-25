@@ -1,0 +1,86 @@
+@charset "ISO-8859-1";
+.header
+{
+	background: linear-gradient(rgba(0,0,0,0.5),#007bff),url("/img/header.jpg");
+	height: 85vh;
+	background-size: cover;
+	background-repeat: no-repeat;
+	clip-path: polygon(50% 0%, 100% 0, 100% 94%, 66% 100%, 36% 94%, 0 100%, 0 0);
+}
+
+.hpadding
+{
+	padding-top: 150px;
+}
+.mypadding
+{
+ padding-top: 80px;	
+}
+
+.mybackground
+{
+	background-color: #007bff;
+}
+
+body
+{
+	background-color: #E4E8E8;
+}
+
+.sidebar
+{
+
+	width: 18%;
+	
+	background: white;
+	height: 100%;
+	position: fixed;padding-top:45px;
+}
+.sidebar a
+{
+	display: block;
+	
+	padding:20px 25px;
+	text-decoration: none;
+	color: grey !important;
+	
+}
+
+.sidebar a:hover
+{
+	background-color:#E4E8E8; 
+}
+
+.sidebar .crossBtn
+{
+	position: absolute;
+	top:0;
+	right:35px;
+	font-size:45px;
+	cursor: pointer;
+}
+.content
+{
+	margin-left:20%;
+}
+.content .bars
+{
+	padding-top: 20px;
+	font-size: 20px;
+	cursor:pointer;
+}
+
+/* search css */
+.search-container
+{
+	position: relative;
+}
+.search-result
+{
+	position: absolute;
+	background:white;
+	width: 100%;
+	padding:10px;
+	border:1px solid grey;
+	display: none;
+}
